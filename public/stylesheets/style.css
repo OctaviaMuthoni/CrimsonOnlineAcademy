@@ -1,0 +1,461 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(12, 131, 201);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    text-align: justify;
+}
+
+header {
+    height: 48vw;
+    background-image: url('/images/banner.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header nav {
+    height: 12vw;
+    width: 94vw;
+    padding: 0 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    display: none;
+}
+
+header nav ul li {
+    list-style-type: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+#menu-button {
+    height: 8vw;
+    background: none;
+    border: none;
+    visibility: visible;
+}
+
+#menu-button img {
+    height: 100%;
+}
+
+header nav #brand-image {
+    height: 100%;
+}
+
+#brand-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 195, 255, 0.2);
+    height: 48vw;
+    width: 100%;
+    position: relative;
+    top: -12vw;
+    left: 0;
+}
+
+#brand-info h1 {
+    font-size: 1.6rem;
+    color: crimson;
+}
+
+#brand-info p {
+    font-style: italic;
+    color: whitesmoke;
+    font-size: 0.9rem;
+}
+
+#courses img {
+    width: 100%;
+    height: 180px;
+}
+  
+  #why-choose-us {
+    text-align: center;
+  }
+  .reasons-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .reason {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .reason h3 {
+    color: crimson;
+  }
+  
+  #courses {
+    text-align: center;
+  }
+  .courses-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .course-card {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  .course-card:hover {
+    transform: translateY(-5px);
+  }
+  .course-card img {
+    border-radius: 10px;
+  }
+
+  .course-card .course-details {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .enroll-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: crimson;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .enroll-btn:hover {
+    background: darkred;
+  }
+
+  /* Footer Styling */
+.footer {
+    background-color: rgb(5, 64, 78); /* Dark gray */
+    color: white;
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  /* Layout */
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Contact Info */
+  .contact-info {
+    text-align: center;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Social Media */
+  .social-media {
+    text-align: center;
+  }
+  
+  .social-media h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .icon img {
+    width: 32px; /* Adjust size as needed */
+    height: 32px;
+    transition: transform 0.3s ease;
+  }
+  
+  .icon img:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+  }
+  
+  /* Copyright Section */
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #fefefe;
+    background-color: rgba(3, 85, 105, 0.3);
+    padding: 10px;
+  }
+
+/* Testimonials Section */
+.testimonials {
+    text-align: center;
+  }
+  
+  /* Slider Container */
+  .slider-container {
+    position: relative;
+    max-width: 100%;
+    padding: 20px;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  /* Slider */
+  .slider {
+    display: flex;
+    /* gap: 10px; */
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Each Testimonial */
+  .testimonial {
+    min-width: calc(100% - 40px);
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f8f8f867;
+  }
+  
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .message {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  .name {
+    font-weight: bold;
+  }
+  
+  /* Navigation Dots */
+  .dots-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #333;
+  }
+  
+  .search-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+input#search {
+    padding: 10px;
+    width: 60%;
+    font-size: 16px;
+}
+.view-toggle button {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: crimson;
+    color: white;
+    margin-left: 5px;
+}
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.course-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+.course-card img {
+    width: 100%;
+    height: 180px;
+}
+.course-info, .course-meta {
+    padding: 10px;
+}
+.enroll-btn {
+    display: block;
+    text-align: center;
+    background: crimson;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.enroll-btn:hover {
+    background: darkred;
+}
+
+/* Grid View */
+.course-card.grid {
+    /* width: calc(33.33% - 20px); */
+}
+
+/* Detail View */
+.course-card.detail {
+    flex-direction: row;
+    width: 100%;
+}
+.course-card.detail img {
+    width: 200px;
+    height: auto;
+}
+.course-card.detail .course-info {
+    flex: 2;
+}
+.course-card.detail .course-meta {
+    flex: 1;
+}
+
+
+/* Media query for tablets (min-width: 768px) */
+@media only screen and (min-width: 768px) {
+    #menu-button {
+        visibility: hidden;
+    }
+
+    header {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 25vw;
+    }
+
+    header nav {
+        height: 4vw;
+        background-color: rgba(5, 64, 78, 0.6);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    header #brand-info {
+        height: 25vw;
+        top: -4vw;
+    }
+
+    #brand-info h1 {
+        font-size: 2.0rem;
+    }
+    
+    #brand-info p {
+        font-size: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 800px;
+        margin: auto;
+      }
+    
+    .contact-info,
+    .social-media {
+        text-align: left;
+    }
+
+    /* .course-card {
+        flex-direction: row;
+    }
+
+    .course-card img {
+        flex: 1;
+        width: 100%;
+    }
+
+    .course-details {
+        flex: 8;
+    } */
+}
+
+/* Media query for large screens (min-width: 1024px) */
+@media only screen and (min-width: 1024px) {
+    /* .course-card {
+        flex-direction: column;
+    } 
+    .courses-container {
+        flex-direction: row;
+    } */
+}

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Courses
+
+  .search-container
+    input#search(type="text", placeholder="Search courses...")
+
+    .view-toggle
+      button#grid-view Grid
+      button#detail-view Detail
+
+  .courses-container#courses-container
+
+  script(src="/javascripts/courses.js")

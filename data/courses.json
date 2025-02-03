@@ -1,0 +1,123 @@
+[
+    {
+      "title": "Web Development Bootcamp",
+      "description": "Learn HTML, CSS, JavaScript, and React to build modern web applications.",
+      "period": "12 Weeks",
+      "charges": "$499",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/web-development"
+    },
+    {
+      "title": "Python for Data Science",
+      "description": "Master Python and its libraries for data analysis and visualization.",
+      "period": "8 Weeks",
+      "charges": "$399",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/python-data-science"
+    },
+    {
+      "title": "Machine Learning Fundamentals",
+      "description": "Understand the basics of ML, algorithms, and model training.",
+      "period": "10 Weeks",
+      "charges": "$599",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/machine-learning"
+    },
+    {
+      "title": "Cybersecurity Essentials",
+      "description": "Learn about network security, encryption, and ethical hacking.",
+      "period": "6 Weeks",
+      "charges": "$450",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/cybersecurity"
+    },
+    {
+      "title": "Digital Marketing Mastery",
+      "description": "Learn SEO, PPC, social media marketing, and content strategy.",
+      "period": "8 Weeks",
+      "charges": "$299",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/digital-marketing"
+    },
+    {
+      "title": "Mobile App Development",
+      "description": "Develop mobile apps for Android and iOS using Flutter.",
+      "period": "10 Weeks",
+      "charges": "$550",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/mobile-app"
+    },
+    {
+      "title": "Graphic Design Fundamentals",
+      "description": "Learn Photoshop, Illustrator, and design principles.",
+      "period": "6 Weeks",
+      "charges": "$299",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/graphic-design"
+    },
+    {
+      "title": "Blockchain & Cryptocurrency",
+      "description": "Understand blockchain technology and cryptocurrency markets.",
+      "period": "9 Weeks",
+      "charges": "$650",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/blockchain"
+    },
+    {
+      "title": "Game Development with Unity",
+      "description": "Build 2D and 3D games using Unity and C#.",
+      "period": "12 Weeks",
+      "charges": "$699",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/game-dev"
+    },
+    {
+      "title": "Artificial Intelligence Basics",
+      "description": "Explore AI concepts and build simple AI models.",
+      "period": "10 Weeks",
+      "charges": "$599",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/ai"
+    },
+    {
+      "title": "Photography & Editing",
+      "description": "Learn professional photography techniques and photo editing.",
+      "period": "6 Weeks",
+      "charges": "$349",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/photography"
+    },
+    {
+      "title": "Cloud Computing & AWS",
+      "description": "Master cloud services and deployment on AWS.",
+      "period": "8 Weeks",
+      "charges": "$599",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/cloud-computing"
+    },
+    {
+      "title": "Internet of Things (IoT)",
+      "description": "Develop IoT solutions and work with microcontrollers.",
+      "period": "9 Weeks",
+      "charges": "$650",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/iot"
+    },
+    {
+      "title": "DevOps & CI/CD",
+      "description": "Learn DevOps practices and implement CI/CD pipelines.",
+      "period": "7 Weeks",
+      "charges": "$599",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/devops"
+    },
+    {
+      "title": "UI/UX Design Masterclass",
+      "description": "Master UI/UX principles and tools like Figma & Adobe XD.",
+      "period": "8 Weeks",
+      "charges": "$399",
+      "image": "/images/machine_learning.webp",
+      "enroll": "/enroll/ui-ux"
+    }
+  ]
+  

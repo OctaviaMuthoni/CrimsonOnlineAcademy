@@ -1,0 +1,33 @@
+[
+    {
+      "name": "Alice Johnson",
+      "image": "/images/trainer_female.webp",
+      "message": "This service is fantastic! It exceeded all my expectations."
+    },
+    {
+      "name": "Michael Smith",
+      "image": "/images/hacker.webp",
+      "message": "Great experience! I highly recommend this to everyone."
+    },
+    {
+      "name": "Emily Davis",
+      "image": "/images/coder.webp",
+      "message": "A truly outstanding service. Will definitely use it again!"
+    },
+    {
+      "name": "Alice Johnson",
+      "image": "/images/trainer_female.webp",
+      "message": "This service is fantastic! It exceeded all my expectations."
+    },
+    {
+      "name": "Michael Smith",
+      "image": "/images/hacker.webp",
+      "message": "Great experience! I highly recommend this to everyone."
+    },
+    {
+      "name": "Emily Davis",
+      "image": "/images/coder.webp",
+      "message": "A truly outstanding service. Will definitely use it again!"
+    }
+  ]
+  

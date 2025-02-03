@@ -1,0 +1,66 @@
+doctype html
+html
+  head
+    title Crimson Online Academy
+    link(rel="manifest" href="/manifest.json")
+    link(rel="icon" href="/icons/icon-192x192.png")
+    link(rel="stylesheet", href="stylesheets/style.css")
+    meta(name="theme-color" content="#007BFF")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  body
+    header
+      #header-content
+        nav 
+          img(src="/images/brand.png", alt="Crimson" id='brand-image')
+          button#menu-button
+              img(src="/icons/menu_icon.png", alt="")
+          ul 
+            li 
+              a(href="home") Home
+            li 
+              a(href="courses") Courses 
+            li 
+              a(href="enroll") Enroll
+            li 
+              a(href="resourses") Resources
+            li 
+              a(href="careers") Careers
+            li 
+              a(href="about") About
+            li 
+              a(href="resources") Contact us   
+              
+        #brand-info
+          h1 Crimson Online Academy
+          p helping you achieve your next career milestone.
+  main
+      block content
+
+      block scripts
+  footer.footer
+    .footer-content
+      // Contact Information
+      .contact-info
+        h3 Contact Us
+        p 1234 Street Name, City, Country
+        p Email: contact@example.com
+        p Phone: +123 456 7890
+
+      // Social Media Links
+      .social-media
+        h3 Follow Us
+        .social-icons
+          a.icon(href="#")
+            img(src="/icons/facebook.webp" alt="Facebook")
+          a.icon(href="#")
+            img(src="/icons/x.webp" alt="Twitter")
+          a.icon(href="#")
+            img(src="/icons/instagram.webp" alt="Instagram")
+          a.icon(href="#")
+            img(src="/icons/linkedin.webp" alt="LinkedIn")
+
+    // Copyright Section
+    .footer-bottom
+      | &copy; 2025 Crimson Academy. All rights reserved.
+
+  

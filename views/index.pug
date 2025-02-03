@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  section#intro
+    h2 About Crimson,
+    p#intro Crimson Online Academy is a premier digital learning platform dedicated to empowering students worldwide with high-quality, accessible education. Our expert-led courses in data science, programming, and more provide a flexible, engaging, and immersive learning experience. Whether you're looking to upskill, start a new career, or expand your knowledge, Crimson Online Academy equips you with the tools and support needed to succeed in today’s fast-paced digital world. Join a vibrant community of learners and take the next step in your educational journey with us! 🚀
+    a(href="/about") Read more... 
+  section#why-choose-us
+    h2 Why Choose Us?
+    .reasons-container
+      .reason
+        h3 Expert Instructors
+        p Learn from industry professionals with real-world experience who are passionate about helping you succeed.
+      .reason
+        h3 Flexible Learning
+        p Access courses anytime, anywhere, with self-paced and live learning options to fit your schedule.
+      .reason
+        h3 Career Support
+        p Gain practical skills, resume guidance, and job placement assistance to kickstart your career.
+  section#courses
+    h2 Our Courses
+    .courses-container
+  section.testimonials
+    h2 Testimonials
+    .slider-container
+      .slider
+        each testimonial, index in testimonials
+          .testimonial(data-index=index)
+            img(src=testimonial.image, alt=testimonial.name class="avatar")
+            p.message= testimonial.message
+            span.name= testimonial.name
+
+    // Navigation Dots
+    .dots-container
+block scripts
+  script(src="/javascripts/testimonials.js") 
+  script(src="/javascripts/courses.js") 

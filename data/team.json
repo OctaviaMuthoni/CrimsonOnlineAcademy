@@ -1,0 +1,33 @@
+[
+    {
+      "name": "Alice Johnson",
+      "title": "Founder & CEO",
+      "role": "Business Strategy",
+      "image": "/images/team/alice.jpg"
+    },
+    {
+      "name": "Mark Smith",
+      "title": "Chief Technology Officer",
+      "role": "Software Development",
+      "image": "/images/team/mark.jpg"
+    },
+    {
+      "name": "Sophia Lee",
+      "title": "Head of Marketing",
+      "role": "Digital Marketing",
+      "image": "/images/team/sophia.jpg"
+    },
+    {
+      "name": "David Brown",
+      "title": "Lead Designer",
+      "role": "UI/UX Design",
+      "image": "/images/team/david.jpg"
+    },
+    {
+      "name": "Emma Wilson",
+      "title": "Project Manager",
+      "role": "Operations & Planning",
+      "image": "/images/team/emma.jpg"
+    }
+  ]
+  

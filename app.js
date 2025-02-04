@@ -1,14 +1,33 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const createError = require("http-errors");
+const session = require("express-session");
+const flash = require("connect-flash");
 
-var indexRouter = require("./routes/index"); // Web routes
-var usersRouter = require("./routes/users");
-var apiRouter = require("./routes/api"); // API routes
+const indexRouter = require("./routes/index"); // Web routes
+const usersRouter = require("./routes/users");
+const apiRouter = require("./routes/api"); // API routes
+const adminRouter = require("./routes/admin"); // Admin routes
+const authRouter = require("./routes/auth"); // Admin routes
 
-var app = express();
+const passport = require("./config/passport");
+
+const app = express();
+
+
+app.use(
+  session({
+    secret: "secret-key",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
 // View engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -23,6 +42,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/api", apiRouter); // API route handling
+app.use("/admin", adminRouter); // Admin route handling
+app.use("/auth", authRouter); // Auth route handling
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel="stylesheet", href="/stylesheets/auth.css")
+  body
+    .container
+      .image-section
+        img(src="/images/login-banner.jpg", alt="Login Banner")
+
+      .form-section
+        .notification-message.hidden
+          p= message
+
+        .login-box
+          img.logo(src="/images/logo.png", alt="Institution Logo")
+          h2 Login
+
+          form(action="/login", method="POST")
+            input(type="text", name="username", placeholder="Username" required)
+            input(type="password", name="password", placeholder="Password" required)
+            button(type="submit") Sign In
+          
+          a(href="#") Forgot Password?

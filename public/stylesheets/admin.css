@@ -1,0 +1,134 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Basic Layout */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .wrapper {
+    display: flex;
+    height: 100vh;
+  }
+  
+  header {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Side Menu */
+  .side-menu {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+    left: -250px;
+    transition: left 0.3s ease;
+  }
+  
+  .side-menu .menu-header h3 {
+    text-align: center;
+    color: #ecf0f1;
+  }
+  
+  .side-menu .menu-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .side-menu .menu-list a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  .side-menu .menu-list a:hover {
+    background-color: #34495e;
+  }
+  
+  .side-menu .menu-list i {
+    margin-right: 10px;
+  }
+  
+  /* Show Menu Text */
+  .side-menu .menu-list span {
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Hide Text in mobile */
+  .side-menu.collapsed .menu-list span {
+    opacity: 0;
+  }
+  
+  /* Content Area */
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 32px;
+    color: #333;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .wrapper {
+      flex-direction: column;
+    }
+  
+    .side-menu {
+      left: 0;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      display: none;
+    }
+  
+    .side-menu.active {
+      display: block;
+    }
+  
+    .content {
+      margin-left: 0;
+    }
+  
+    #menu-toggle {
+      display: block;
+    }
+  
+    .side-menu.collapsed {
+      width: 80px;
+    }
+  }
+  

@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
+    link(rel="stylesheet", href="/stylesheets/admin.css")meta(name="theme-color" content="#007BFF")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  body
+    // Main wrapper
+    .wrapper
+      // Header
+      header
+        .header-container
+          button#menu-toggle
+            i.fas.fa-bars
+          h1 Admin Dashboard
+
+      // Side menu
+      .side-menu
+        .menu-header
+          h3 Admin Menu
+        .menu-list
+          a(href="/") 
+            i.fas.fa-tachometer-alt
+            span Dashboard
+          a(href="/courses")
+            i.fas.fa-chalkboard-teacher
+            span Courses
+          a(href="/users")
+            i.fas.fa-users
+            span Users
+          a(href="/testimonials")
+            i.fas.fa-quote-left
+            span Testimonials
+          a(href="/events")
+            i.fas.fa-calendar-alt
+            span Events
+
+      // Main content area
+      .content
+        block content
+
+    script(src="/javascripts/layout.js")

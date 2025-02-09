@@ -1,43 +1,71 @@
 doctype html
 html(lang="en")
   head
-    title= title
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
-    link(rel="stylesheet", href="/stylesheets/admin.css")meta(name="theme-color" content="#007BFF")
+    meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Admin Dashboard
+    link(rel="stylesheet" href="/stylesheets/admin.css")
+    link(rel="stylesheet" href="/stylesheets/main.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap")
+    script(defer src="/javascripts/admin.js")
   body
-    // Main wrapper
-    .wrapper
-      // Header
-      header
-        .header-container
-          button#menu-toggle
+    .admin-layout
+      aside.sidebar.hidden
+        button.close-btn &times;
+        .brand
+          img(src="/images/brand.png" alt="Brand Logo")
+        nav.menu
+          ul
+            li: a(href="/dashboard")
+              i.fas.fa-tachometer-alt
+              | Dashboard
+            li: a(href="/admin/courses")
+              i.fas.fa-book
+              | Courses
+            li: a(href="/admin/enrollment")
+              i.fas.fa-user-check
+              | Enrollment
+            li: a(href="/admin/payments")
+              i.fas.fa-credit-card
+              | Payments
+            li: a(href="/admin/resources")
+              i.fas.fa-folder-open
+              | Resources
+            li: a(href="/admin/events")
+              i.fas.fa-calendar-alt
+              | Events
+            li: a(href="/admin/careers")
+              i.fas.fa-briefcase
+              | Careers
+            li: a(href="/admin/notifications")
+              i.fas.fa-bell
+              | Notifications
+            li: a(href="/admin/reports")
+              i.fas.fa-chart-line
+              | Reports
+            li: a(href="/admin/manage")
+              i.fas.fa-cogs
+              | Manage
+
+      main.content
+        header.topbar
+          button.menu-toggle
             i.fas.fa-bars
-          h1 Admin Dashboard
-
-      // Side menu
-      .side-menu
-        .menu-header
-          h3 Admin Menu
-        .menu-list
-          a(href="/") 
-            i.fas.fa-tachometer-alt
-            span Dashboard
-          a(href="/courses")
-            i.fas.fa-chalkboard-teacher
-            span Courses
-          a(href="/users")
-            i.fas.fa-users
-            span Users
-          a(href="/testimonials")
-            i.fas.fa-quote-left
-            span Testimonials
-          a(href="/events")
-            i.fas.fa-calendar-alt
-            span Events
-
-      // Main content area
-      .content
-        block content
-
-    script(src="/javascripts/layout.js")
+          h1.page-title= title
+          .auth-user
+            img(src="/images/coder.webp" alt="User Image")
+            span.username #{authUserName}
+            .user-options.user-options-invisible
+              ul
+                li: a(href="/admin/profile")
+                  i.fas.fa-user
+                  | Profile
+                li: a(href="/admin/logout")
+                  i.fas.fa-sign-out-alt
+                  | Logout
+        section.main-content
+          block content
+          block scripts
+        footer.footer
+          span.copyright &copy; #{new Date().getFullYear()} Crimson Valley Solutions

@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  h1 Notification Details
+  
+  p 
+    strong From: 
+    | #{notification.firstname} #{notification.lastname} (#{notification.email})
+  
+  p 
+    strong Subject: 
+    | #{notification.subject}
+  
+  p 
+    strong Date: 
+    | #{new Date(notification.created_at).toLocaleString()}
+
+  hr
+
+  p #{notification.message}
+
+  hr
+
+  div.actions
+    if notification.status !== 'replied'
+      a(href=`/admin/notifications/${notification.id}/reply`, class="btn btn-primary") Reply
+    if notification.status !== 'read'
+      form(method="POST", action=`/admin/notifications/${notification.id}/mark-read`)
+        button(type="submit", class="btn btn-success") Mark as Read
+    if notification.status !== 'discarded'
+      form(method="POST", action=`/admin/notifications/${notification.id}/discard`)
+        button(type="submit", class="btn btn-danger") Discard

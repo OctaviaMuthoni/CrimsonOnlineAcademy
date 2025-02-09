@@ -1,0 +1,103 @@
+extends ../layout
+
+block content
+    .search-input 
+        input#search(type='text', placeholder='Search courses...')
+    .flex.flex-evenly.gap-20.wrap
+        .filters.flex-center.gap-20
+            label Category:
+                select
+                    option(value='all') All
+                    option(value='webdev') Web Development
+                    option(value='ai') AI
+                    option(value='cyber') Cybersecurity
+
+            label Duration:
+                select
+                    option(value='all') Any Duration
+                    option(value='short') Short (< 5 hours)
+                    option(value='medium') Medium (5-20 hours)
+                    option(value='long') Long (> 20 hours)
+
+        .price-range.flex-column
+            label Price Range:
+            .flex-center.gap-10
+                span#min-price-value $0
+                input#max-price(type="range" min="0" max="500" value="500")
+                span#max-price-value $500
+
+    button.button-primary(onclick='addCourse()')
+        span Add Course
+        i.fas.fa-plus
+
+    // Courses Table
+    section.flex-column.grow
+        table
+            thead
+                tr
+                th ID
+                th Name
+                th Category
+                th Enrolled
+                th Actions
+            tbody#course-list
+                tr
+                    td 101
+                    td Full-Stack Web Dev
+                    td Web Development
+                    td 1200
+                    td 
+                        button.edit(onclick='editCourse(101)') ✏️
+                        button.delete(onclick='deleteCourse(101)') 🗑️
+                tr
+                    td 102
+                    td Intro to AI
+                    td AI
+                    td 850
+                    td 
+                        button.edit(onclick='editCourse(102)') ✏️
+                        button.delete(onclick='deleteCourse(102)') 🗑️
+
+    // Pagination
+    div.pagination
+        button.prev(onclick='prevPage()') ◀
+        span#page-number Page 1 of 5
+        button.next(onclick='nextPage()') ▶
+
+    script.
+        let currentPage = 1;
+        const totalPages = 5;
+
+        function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            updatePagination();
+        }
+        }
+
+        function nextPage() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            updatePagination();
+        }
+        }
+
+        function updatePagination() {
+        document.getElementById('page-number').innerText = `Page ${currentPage} of ${totalPages}`;
+        document.querySelector('.courses-table tbody').style.opacity = '0';
+        setTimeout(() => {
+            document.querySelector('.courses-table tbody').style.opacity = '1';
+        }, 300);
+        }
+
+        function addCourse() {
+        alert('Add course functionality here');
+        }
+
+        function editCourse(id) {
+        alert('Edit course ' + id);
+        }
+
+        function deleteCourse(id) {
+        alert('Delete course ' + id);
+        }

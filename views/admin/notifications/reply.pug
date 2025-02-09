@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  h1 Reply to #{notification.firstname} #{notification.lastname}
+
+  form(method="POST", action=`/admin/notifications/${notification.id}/reply`)
+    input(type="hidden", name="email", value=notification.email)
+    input(type="hidden", name="subject", value=`Re: ${notification.subject}`)
+
+    label(for="replyMessage") Message:
+    textarea(name="replyMessage", rows="5", required)
+
+    button(type="submit", class="btn btn-primary") Send Reply

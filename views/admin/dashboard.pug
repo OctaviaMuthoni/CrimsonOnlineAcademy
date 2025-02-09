@@ -1,5 +1,104 @@
-extends admin/layout
+extends layout
 
 block content
-  h2 Welcome to the Admin Dashboard
-  p Your control panel for managing courses, users, testimonials, and events.
+  section.stats
+    .stat-card
+      h3 Total Users
+      p 1,245
+    .stat-card
+      h3 Total Courses
+      p 58
+    .stat-card
+      h3 Active Subscriptions
+      p 342
+  
+  section.live-table-container
+    .live-table
+      h2 Currently Logged-in Students
+      table
+        thead
+          tr
+            th Name
+            th Email
+            th Status
+        tbody
+          tr(onclick='showStudentPreview("John Doe", "john@example.com", "+123456789")')
+            td John Doe
+            td john@example.com
+            td Online
+          tr(onclick='showStudentPreview("Jane Smith", "jane@example.com", "+987654321")')
+            td Jane Smith
+            td jane@example.com
+            td Online
+    .student-preview
+      img#student-photo(src='/images/student-avatar.png', alt='Student Photo')
+      h3#student-name Student Name
+      p Email: <span id="student-email">student@example.com</span>
+      p Phone: <span id="student-phone">+123456789</span>
+
+  section.charts-container
+    .line-chart
+      h2 Academy Growth & Activity
+      canvas#growthChart
+    .pie-chart
+      h2 Course Enrollment
+      canvas#enrollmentChart
+
+  script(src='https://cdn.jsdelivr.net/npm/chart.js')
+  script.
+    function showStudentPreview(name, email, phone) {
+      document.getElementById('student-name').innerText = name;
+      document.getElementById('student-email').innerText = email;
+      document.getElementById('student-phone').innerText = phone;
+      document.querySelector('.student-preview').style.display = 'block';
+    }
+
+    // Line Chart - Academy Growth & Activity
+    const growthCtx = document.getElementById('growthChart').getContext('2d');
+    new Chart(growthCtx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [
+          {
+            label: 'User Activity',
+            data: [10, 30, 50, 80, 60, 90],
+            borderColor: 'blue',
+            fill: false,
+          },
+          {
+            label: 'Academy Growth',
+            data: [5, 15, 40, 60, 70, 85],
+            borderColor: 'green',
+            fill: false,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        animation: {
+          duration: 1000
+        }
+      }
+    });
+
+    // Pie Chart - Course Enrollment
+    const enrollCtx = document.getElementById('enrollmentChart').getContext('2d');
+    new Chart(enrollCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Web Dev', 'AI', 'Cybersecurity', 'Data Science'],
+        datasets: [
+          {
+            data: [40, 25, 20, 15],
+            backgroundColor: ['#3498db', '#2ecc71', '#f1c40f', '#e74c3c']
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        animation: {
+          duration: 1000
+        }
+      }
+    });

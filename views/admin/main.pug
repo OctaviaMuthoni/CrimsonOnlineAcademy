@@ -1,0 +1,90 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
+    link(rel="stylesheet", href="/stylesheets/admin.css")
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    script(src="/javascripts/admin.js")
+    meta(name="theme-color" content="#007BFF")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    style.
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+         
+        main {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #333;
+            color: #fefefe;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fefefe;
+            padding: 10px;
+            text-align: center;
+        }
+        footer p {
+            font-size: 0.8rem;
+        }
+
+        #sdebar {
+            width: 250px;
+            background-color: #333;
+        }
+  body
+    header
+        #brand 
+            p Crimson Valley Academy
+
+        // Authenticated user section
+        #auth-user
+        img(src="/images/user.jpg", alt="User Avatar")
+        //- span= user.username
+        i.fas.fa-chevron-down
+
+        // Dropdown menu
+        #user-dropdown.hidden
+            ul
+            li 
+                a(href="/profile") 
+                i.fas.fa-user
+                | Profile
+            li 
+                a(href="/auth/logout") 
+                i.fas.fa-sign-out-alt
+                | Logout
+    main
+        #sdebar
+            p sidebar
+        #content 
+            #content-header 
+                button#menu-btn 
+                    i.fas.fa-bars 
+                h1= title
+            #main-content
+                p Main Content
+    footer 
+        p Copyright CrimsonOnlineAcademy @2025

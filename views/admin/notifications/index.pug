@@ -1,0 +1,44 @@
+extends ../layout
+
+block content
+  h1 Notifications
+
+  form#filterForm.flex-column.gap-20(method="GET", action="/admin/notifications")
+    input#search.filter-input(type="text", name="search", placeholder="Search...", value=filters.search)
+    .filters.flex.gap-20
+        select#type.filter-input(name="type")
+            option(value="") All types
+            option(value="contact message" selected=(filters.type === "contact message")) Contact messages
+        select#status.filter-input(name="status")
+            option(value="") All statuses
+            option(value="unread" selected=(filters.status === "unread")) Unread
+            option(value="read" selected=(filters.status === "read")) Read
+            option(value="replied" selected=(filters.status === "replied")) Replied
+            option(value="discarded" selected=(filters.status === "discarded")) Discarded
+        input#date.filter-input(type="date", name="startDate", value=filters.startDate)
+        input#date.filter-input(type="date", name="endDate", value=filters.endDate)
+
+  table
+    thead
+      tr
+        th Name
+        th Email
+        th Subject
+        th Status
+        th Date
+        th Actions
+    tbody#notificationsTable
+      each notification in notifications
+        tr(class=(notification.status === 'unread' ? 'unread' : ''))
+          td #{notification.firstname} #{notification.lastname}
+          td #{notification.email}
+          td #{notification.subject}
+          td #{notification.status}
+          td #{new Date(notification.created_at).toLocaleDateString()}
+          td
+            a(href=`/admin/notifications/${notification.id}`) View
+            if notification.status !== 'discarded'
+              a(href=`/admin/notifications/${notification.id}/discard`, class="discard") Discard
+
+block scripts 
+    script(src="/javascripts/notifications.js")

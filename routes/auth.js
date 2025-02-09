@@ -1,30 +1,16 @@
 const express = require("express");
-const passport = require("passport");
+const { login, logout } = require("../controllers/authController");
 const router = express.Router();
 
 // Login Page
 router.get("/login", (req, res) => {
-  res.render("auth/login", {
-    title: "Login",
-    message: req.flash("error"),
-  });
+    res.render("auth/login", { title: "Login", message: req.flash("error") });
 });
 
 // Handle Login
-router.post(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/dashboard", // Redirect normal users
-    failureRedirect: "/auth/login",
-    failureFlash: true,
-  })
-);
+router.post("/login", login);
 
 // Logout
-router.get("/logout", (req, res) => {
-  req.logout(() => {
-    res.redirect("/auth/login");
-  });
-});
+router.get("/logout", logout);
 
 module.exports = router;
